@@ -571,7 +571,23 @@
                                             <label>SchoolPay Portal URL</label>
                                             <input type="url" id="setting-schoolpay-url" placeholder="https://www.schoolpay.com">
                                         </div>
-                                        <button type="submit" class="btn btn-primary" style="background: var(--gold); color: var(--navy-dark); font-weight: 700;">Save Settings</button>
+
+                                        <div class="form-group" style="margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--white-10);">
+                                            <label style="font-weight: 700; color: var(--gold); margin-bottom: 10px; display: block;">Website Page Visibility (Uncheck to DISABLE page on website)</label>
+                                            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; background: var(--navy-lighter); padding: 16px; border-radius: 8px;">
+                                                <label style="cursor: pointer;"><input type="checkbox" class="page-toggle" data-page="about" checked> About</label>
+                                                <label style="cursor: pointer;"><input type="checkbox" class="page-toggle" data-page="announcements" checked> Announcements</label>
+                                                <label style="cursor: pointer;"><input type="checkbox" class="page-toggle" data-page="minutes" checked> Minutes</label>
+                                                <label style="cursor: pointer;"><input type="checkbox" class="page-toggle" data-page="roster" checked> Roster</label>
+                                                <label style="cursor: pointer;"><input type="checkbox" class="page-toggle" data-page="events" checked> Events</label>
+                                                <label style="cursor: pointer;"><input type="checkbox" class="page-toggle" data-page="elections" checked> Elections Hub</label>
+                                                <label style="cursor: pointer;"><input type="checkbox" class="page-toggle" data-page="motm" checked> Member of Month</label>
+                                                <label style="cursor: pointer;"><input type="checkbox" class="page-toggle" data-page="gallery" checked> Photo Gallery</label>
+                                                <label style="cursor: pointer;"><input type="checkbox" class="page-toggle" data-page="resources" checked> Resources</label>
+                                            </div>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary" style="background: var(--gold); color: var(--navy-dark); font-weight: 700; margin-top: 16px;">Save Settings</button>
                                     </form>
                                 </div>
 

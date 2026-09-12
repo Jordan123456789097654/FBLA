@@ -346,14 +346,7 @@ SEED_DATA = {
         {"id":"min1","title":"First Meeting of 2026-2027","date":"2026-09-16","calledToOrder":"3:15 PM","adjournedAt":"4:00 PM","attendance":"42 members present","advisor":"Mrs. Johnson","agendaItems":[{"title":"Welcome & Introductions","description":"Officers introduced themselves and welcomed new members to the chapter."},{"title":"Overview of FBLA","description":"Advisor presented an overview of FBLA-ML, its mission, and the benefits of membership."},{"title":"Membership Dues","description":"Dues are $15, due by September 30th. Payment can be made online via SchoolPay."},{"title":"Competition Preview","description":"Vice President discussed available competitive events for the 2026-2027 season."},{"title":"Community Service","description":"The chapter will organize a school supply drive in October."},{"title":"Next Meeting","description":"October 7th, 2026 at 3:15 PM in Room 204."}],"recorder":"Secretary","createdAt":"2026-09-16T16:00:00"}
     ],
     'roster.json': [
-        {"id":"ros1","name":"Alex Rivera","grade":"8th","role":"officer","officerTitle":"President","email":"","duesPaid":True,"createdAt":"2026-08-01T12:00:00"},
-        {"id":"ros2","name":"Jordan Chen","grade":"8th","role":"officer","officerTitle":"Vice President","email":"","duesPaid":True,"createdAt":"2026-08-01T12:00:00"},
-        {"id":"ros3","name":"Mia Patel","grade":"7th","role":"officer","officerTitle":"Secretary","email":"","duesPaid":True,"createdAt":"2026-08-01T12:00:00"},
-        {"id":"ros4","name":"Ethan Brooks","grade":"8th","role":"officer","officerTitle":"Treasurer","email":"","duesPaid":True,"createdAt":"2026-08-01T12:00:00"},
-        {"id":"ros5","name":"Sofia Martinez","grade":"7th","role":"officer","officerTitle":"Reporter","email":"","duesPaid":True,"createdAt":"2026-08-01T12:00:00"},
-        {"id":"ros6","name":"Liam Washington","grade":"8th","role":"officer","officerTitle":"Parliamentarian","email":"","duesPaid":False,"createdAt":"2026-08-01T12:00:00"},
-        {"id":"ros7","name":"Emma Thompson","grade":"7th","role":"member","officerTitle":"","email":"","duesPaid":True,"createdAt":"2026-08-15T12:00:00"},
-        {"id":"ros8","name":"Noah Kim","grade":"6th","role":"member","officerTitle":"","email":"","duesPaid":False,"createdAt":"2026-08-15T12:00:00"}
+        {"id":"ros1","name":"Jordan","grade":"8th","role":"officer","officerTitle":"Secretary","email":"jordanedanield13@gmail.com","duesPaid":True,"createdAt":"2026-08-01T12:00:00"}
     ],
     'events.json': [
         {"id":"evt1","title":"First Chapter Meeting","date":"2026-09-16","time":"3:15 PM - 4:00 PM","location":"Room 204","description":"Welcome meeting for all new and returning members.","category":"Meeting","createdAt":"2026-09-01T12:00:00"},

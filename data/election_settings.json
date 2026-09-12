@@ -1,5 +1,6 @@
 {
   "enabled": true,
   "title": "2026-2027 Officer Elections",
-  "schoolPayUrl": "https://www.schoolpay.com"
+  "schoolPayUrl": "https://www.schoolpay.com",
+  "disabledPages": []
 }

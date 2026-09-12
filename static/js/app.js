@@ -117,17 +117,28 @@ const showToast = (message, type = 'success') => {
   }, 3500);
 };
 
-// Global settings sync (updates SchoolPay buttons across the site)
+// Global settings sync (updates SchoolPay buttons & hides disabled pages)
 const updateGlobalSettingsUI = async () => {
   try {
     const settings = await api.get('/api/election-settings');
-    if (settings && settings.schoolPayUrl) {
-      document.querySelectorAll('.schoolpay-btn').forEach(btn => {
-        btn.setAttribute('href', settings.schoolPayUrl);
+    if (settings) {
+      if (settings.schoolPayUrl) {
+        document.querySelectorAll('.schoolpay-btn').forEach(btn => {
+          btn.setAttribute('href', settings.schoolPayUrl);
+        });
+      }
+      const disabledPages = settings.disabledPages || [];
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        const pageId = link.getAttribute('href').replace('#', '');
+        if (disabledPages.includes(pageId) && pageId !== 'admin') {
+          link.style.display = 'none';
+        } else {
+          link.style.display = '';
+        }
       });
     }
   } catch (err) {
-    console.error('Error fetching election settings:', err);
+    console.error('Error fetching site settings:', err);
   }
 };
 
@@ -139,10 +150,8 @@ const checkMeetingReminderBanner = async () => {
     if (meetings.length === 0) return;
 
     const now = new Date();
-    // Sort upcoming meetings
     const upcomingMeetings = meetings.filter(m => {
       const eventDate = new Date(m.date + (m.date.includes('T') ? '' : 'T00:00:00'));
-      // Event date is today or in future
       return eventDate >= new Date(now.getFullYear(), now.getMonth(), now.getDate());
     }).sort((a, b) => new Date(a.date) - new Date(b.date));
 
@@ -152,7 +161,6 @@ const checkMeetingReminderBanner = async () => {
     const meetingDate = new Date(nextMeeting.date + (nextMeeting.date.includes('T') ? '' : 'T00:00:00'));
     const diffHours = (meetingDate - now) / (1000 * 60 * 60);
 
-    // If meeting is within the next 24 hours (or today/tomorrow)
     const isWithin24h = diffHours >= -12 && diffHours <= 36;
     const banner = document.getElementById('meeting-reminder-banner');
     const bannerText = document.getElementById('banner-text');
@@ -180,9 +188,17 @@ const checkMeetingReminderBanner = async () => {
 // Router
 const router = async () => {
   const hash = window.location.hash || '#home';
+  const pageId = hash.replace('#', '');
   const pages = document.querySelectorAll('.page');
   const navLinks = document.querySelectorAll('.nav-links a');
   
+  let settings = null;
+  try {
+    settings = await api.get('/api/election-settings');
+  } catch(e) {}
+  
+  const disabledPages = (settings && settings.disabledPages) || [];
+
   pages.forEach(p => p.classList.remove('active'));
   
   navLinks.forEach(l => {
@@ -196,6 +212,19 @@ const router = async () => {
   if (targetPage) {
     targetPage.classList.add('active');
     
+    if (disabledPages.includes(pageId) && pageId !== 'admin') {
+      targetPage.innerHTML = `
+        <div class="container" style="padding: 60px 20px; text-align: center;">
+          <div class="card" style="max-width: 600px; margin: 0 auto; padding: 40px; border: 1px solid var(--gold); background: var(--navy-light);">
+            <span style="font-size: 3rem; display: block; margin-bottom: 16px;">🚧</span>
+            <h2 style="color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 12px;">Section Currently Unavailable</h2>
+            <p style="color: var(--white-80); line-height: 1.6; margin: 0;">This section is currently disabled or under maintenance by chapter administration. Please check back later!</p>
+          </div>
+        </div>
+      `;
+      return;
+    }
+
     switch (hash) {
       case '#home': renderHome(); break;
       case '#announcements': renderAnnouncements(); break;
@@ -760,6 +789,12 @@ const loadAdminElectionsTab = async () => {
     document.getElementById('setting-election-title').value = settings.title || '';
     document.getElementById('setting-schoolpay-url').value = settings.schoolPayUrl || '';
 
+    const disabledPages = settings.disabledPages || [];
+    document.querySelectorAll('.page-toggle').forEach(chk => {
+      const pageId = chk.getAttribute('data-page');
+      chk.checked = !disabledPages.includes(pageId);
+    });
+
     const container = document.getElementById('admin-candidates-list');
     if (!container) return;
 
@@ -905,9 +940,17 @@ const setupAdminForms = () => {
       const enabled = document.getElementById('setting-election-enabled').checked;
       const title = document.getElementById('setting-election-title').value;
       const schoolPayUrl = document.getElementById('setting-schoolpay-url').value;
+      
+      const disabledPages = [];
+      document.querySelectorAll('.page-toggle').forEach(chk => {
+        if (!chk.checked) {
+          disabledPages.push(chk.getAttribute('data-page'));
+        }
+      });
+
       try {
-        await api.post('/api/election-settings', { enabled, title, schoolPayUrl });
-        showToast('Settings saved successfully!');
+        await api.post('/api/election-settings', { enabled, title, schoolPayUrl, disabledPages });
+        showToast('Settings & page visibility saved successfully!');
         updateGlobalSettingsUI();
       } catch (err) {
         showToast('Failed to save settings', 'error');
