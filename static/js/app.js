@@ -342,7 +342,7 @@ const renderRoster = async () => {
       officersGrid.innerHTML = officers.map(off => `
         <div class="card officer-card" style="text-align: center; padding: 24px; position: relative;">
           <span style="position: absolute; top: 12px; right: 12px; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 12px; background: ${off.duesPaid ? 'rgba(46,204,113,0.2)' : 'rgba(231,76,60,0.2)'}; color: ${off.duesPaid ? '#2ecc71' : '#e74c3c'}; border: 1px solid ${off.duesPaid ? '#2ecc71' : '#e74c3c'};">
-            ${off.duesPaid ? '✓ $15 Dues Paid' : 'Dues Pending'}
+            ${off.duesPaid ? '✓ Dues Paid' : 'Dues Pending'}
           </span>
           <div class="officer-avatar" style="width: 72px; height: 72px; background: var(--navy-lighter); color: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; margin: 10px auto 16px; border: 2px solid var(--gold);">${getInitials(off.name)}</div>
           <h3 class="officer-name" style="font-size: 1.1rem; margin-bottom: 4px; font-family: 'Inter', sans-serif;">${escapeHtml(off.name)}</h3>
@@ -361,7 +361,7 @@ const renderRoster = async () => {
           <td style="padding: 12px 16px;"><span class="category-badge" style="background: var(--navy-lighter); color: var(--white-80);">Member</span></td>
           <td style="padding: 12px 16px;">
             <span style="display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: 600; background: ${m.duesPaid ? 'rgba(46,204,113,0.2)' : 'rgba(241,196,15,0.2)'}; color: ${m.duesPaid ? '#2ecc71' : '#f1c40f'}; border: 1px solid ${m.duesPaid ? '#2ecc71' : '#f1c40f'};">
-              ${m.duesPaid ? '✓ Paid ($15)' : 'Dues Pending'}
+              ${m.duesPaid ? '✓ Dues Paid' : 'Dues Pending'}
             </span>
           </td>
         </tr>
@@ -702,7 +702,7 @@ const renderAdminList = async (type, itemRenderer) => {
           ${itemRenderer(item)}
         </div>
         <div class="admin-item-actions" style="display: flex; gap: 8px; align-items: center;">
-          ${type === 'roster' ? `<button class="btn btn-sm" style="background: ${item.duesPaid ? '#2ecc71' : '#f1c40f'}; color: black; font-weight: 700; border: none;" onclick="toggleMemberDues('${item.id}', ${!item.duesPaid})">${item.duesPaid ? '✓ Paid ($15)' : 'Mark $15 Paid'}</button>` : ''}
+          ${type === 'roster' ? `<button class="btn btn-sm" style="background: ${item.duesPaid ? '#2ecc71' : '#f1c40f'}; color: black; font-weight: 700; border: none;" onclick="toggleMemberDues('${item.id}', ${!item.duesPaid})">${item.duesPaid ? '✓ Dues Paid' : 'Mark Dues Paid'}</button>` : ''}
           <button class="btn btn-outline btn-sm" onclick="editItem('${type}', '${item.id}')">Edit</button>
           <button class="btn btn-danger btn-sm" style="background: #e74c3c; border: none; color: white;" onclick="deleteItem('${type}', '${item.id}')">Delete</button>
         </div>
@@ -743,7 +743,7 @@ const renderAdminResourceItem = (item) => `
 window.toggleMemberDues = async (memberId, newStatus) => {
   try {
     await api.put(`/api/roster/${memberId}`, { duesPaid: newStatus });
-    showToast(newStatus ? 'Marked $15 dues as paid!' : 'Marked dues as pending');
+    showToast(newStatus ? 'Marked dues as paid!' : 'Marked dues as pending');
     renderAdminList('roster', renderAdminRosterItem);
   } catch (err) {
     showToast('Failed to update dues status', 'error');
