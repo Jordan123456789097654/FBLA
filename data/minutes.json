@@ -1,1 +1,40 @@
-[]
+[
+  {
+    "id": "min1",
+    "title": "First Meeting of 2026-2027",
+    "date": "2026-09-16",
+    "calledToOrder": "3:15 PM",
+    "adjournedAt": "4:00 PM",
+    "attendance": "42 members present",
+    "advisor": "Mrs. Johnson",
+    "recorder": "Jordan (Secretary)",
+    "googleDocUrl": "https://docs.google.com/document/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit?usp=sharing",
+    "agendaItems": [
+      {
+        "title": "Welcome & Introductions",
+        "description": "Officers introduced themselves and welcomed new members to the chapter."
+      },
+      {
+        "title": "Overview of FBLA",
+        "description": "Advisor presented an overview of FBLA-ML, its mission, and the benefits of membership."
+      },
+      {
+        "title": "Membership Dues",
+        "description": "Dues are $15, due by September 30th. Payment can be made online via SchoolPay."
+      },
+      {
+        "title": "Competition Preview",
+        "description": "Vice President discussed available competitive events for the 2026-2027 season."
+      },
+      {
+        "title": "Community Service",
+        "description": "The chapter will organize a school supply drive in October."
+      },
+      {
+        "title": "Next Meeting",
+        "description": "October 7th, 2026 at 3:15 PM in Room 204."
+      }
+    ],
+    "createdAt": "2026-09-16T16:00:00"
+  }
+]

@@ -315,6 +315,13 @@ const renderMinutes = async () => {
             <ol style="padding-left: 20px; color: var(--white-80); line-height: 1.8;">
               ${agendaHtml || '<li>No agenda items listed</li>'}
             </ol>
+            ${min.googleDocUrl || min.docUrl ? `
+              <div style="margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--white-10);">
+                <a href="${escapeHtml(min.googleDocUrl || min.docUrl)}" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="background: var(--gold); color: var(--navy-dark); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 8px;">
+                  📄 Open Official Google Doc Minutes ↗
+                </a>
+              </div>
+            ` : ''}
           </div>
         </details>
       `;
@@ -1025,6 +1032,7 @@ const handleFormSubmit = async (e, type) => {
       attendance: parseInt(document.getElementById('minute-attendance').value || '0'),
       advisor: document.getElementById('minute-advisor').value,
       recorder: document.getElementById('minute-recorder').value,
+      googleDocUrl: document.getElementById('minute-doc-url').value.trim(),
       agendaItems: agenda
     };
   } else if (type === 'roster') {
@@ -1113,6 +1121,7 @@ window.editItem = async (typeResource, id) => {
       document.getElementById('minute-attendance').value = item.attendance || 0;
       document.getElementById('minute-advisor').value = item.advisor || '';
       document.getElementById('minute-recorder').value = item.recorder || '';
+      document.getElementById('minute-doc-url').value = item.googleDocUrl || item.docUrl || '';
       
       const container = document.getElementById('agenda-items-container');
       container.innerHTML = '';
