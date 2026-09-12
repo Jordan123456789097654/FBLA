@@ -1,1 +1,82 @@
-[]
+[
+  {
+    "id": "ros1",
+    "name": "Alex Rivera",
+    "grade": "8th",
+    "role": "officer",
+    "officerTitle": "President",
+    "email": "",
+    "duesPaid": true,
+    "createdAt": "2026-08-01T12:00:00"
+  },
+  {
+    "id": "ros2",
+    "name": "Jordan",
+    "grade": "8th",
+    "role": "officer",
+    "officerTitle": "Secretary",
+    "email": "jordanedanield13@gmail.com",
+    "duesPaid": true,
+    "createdAt": "2026-08-01T12:00:00"
+  },
+  {
+    "id": "ros3",
+    "name": "Mia Patel",
+    "grade": "7th",
+    "role": "officer",
+    "officerTitle": "Vice President",
+    "email": "",
+    "duesPaid": true,
+    "createdAt": "2026-08-01T12:00:00"
+  },
+  {
+    "id": "ros4",
+    "name": "Ethan Brooks",
+    "grade": "8th",
+    "role": "officer",
+    "officerTitle": "Treasurer",
+    "email": "",
+    "duesPaid": true,
+    "createdAt": "2026-08-01T12:00:00"
+  },
+  {
+    "id": "ros5",
+    "name": "Sofia Martinez",
+    "grade": "7th",
+    "role": "officer",
+    "officerTitle": "Reporter",
+    "email": "",
+    "duesPaid": true,
+    "createdAt": "2026-08-01T12:00:00"
+  },
+  {
+    "id": "ros6",
+    "name": "Liam Washington",
+    "grade": "8th",
+    "role": "officer",
+    "officerTitle": "Parliamentarian",
+    "email": "",
+    "duesPaid": false,
+    "createdAt": "2026-08-01T12:00:00"
+  },
+  {
+    "id": "ros7",
+    "name": "Emma Thompson",
+    "grade": "7th",
+    "role": "member",
+    "officerTitle": "",
+    "email": "",
+    "duesPaid": true,
+    "createdAt": "2026-08-15T12:00:00"
+  },
+  {
+    "id": "ros8",
+    "name": "Noah Kim",
+    "grade": "6th",
+    "role": "member",
+    "officerTitle": "",
+    "email": "",
+    "duesPaid": false,
+    "createdAt": "2026-08-15T12:00:00"
+  }
+]
