@@ -1,0 +1,29 @@
+[
+  {
+    "id": "gal1",
+    "title": "State Leadership Conference 2026",
+    "imageUrl": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600",
+    "caption": "Our chapter at the State Leadership Conference",
+    "event": "SLC 2026",
+    "date": "2026-04-15",
+    "createdAt": "2026-04-16T12:00:00"
+  },
+  {
+    "id": "gal2",
+    "title": "Community Service Day",
+    "imageUrl": "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600",
+    "caption": "Members volunteering at the local food bank",
+    "event": "Community Service",
+    "date": "2026-03-10",
+    "createdAt": "2026-03-11T12:00:00"
+  },
+  {
+    "id": "gal3",
+    "title": "Chapter Meeting",
+    "imageUrl": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600",
+    "caption": "Monthly chapter meeting in progress",
+    "event": "Chapter Meeting",
+    "date": "2026-02-05",
+    "createdAt": "2026-02-06T12:00:00"
+  }
+]

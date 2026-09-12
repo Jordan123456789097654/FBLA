@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Little Mill Middle School FBLA</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-icon">📊</span>
+        <span class="logo-text">LMMS <strong>FBLA</strong></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#announcements" class="nav-link">Announcements</a></li>
+        <li><a href="#minutes" class="nav-link">Meeting Minutes</a></li>
+        <li><a href="#officers" class="nav-link">Officers</a></li>
+        <li><a href="#events" class="nav-link">Events</a></li>
+        <li><a href="#join" class="nav-link nav-cta">Join FBLA</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <header class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-badge">Future Business Leaders of America</p>
+      <h1 class="hero-title">Little Mill<br>Middle School <span class="highlight">FBLA</span></h1>
+      <p class="hero-subtitle">Empowering tomorrow's business leaders through education, competition, and community service.</p>
+      <div class="hero-actions">
+        <a href="#join" class="btn btn-primary">Join Our Chapter</a>
+        <a href="#about" class="btn btn-outline">Learn More</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number" data-target="50">0</span>+
+          <span class="stat-label">Members</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-target="10">0</span>+
+          <span class="stat-label">Events/Year</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-target="15">0</span>+
+          <span class="stat-label">Awards Won</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Who We Are</p>
+        <h2 class="section-title">About Our Chapter</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-icon">🎯</div>
+          <h3>Our Mission</h3>
+          <p>FBLA-Middle Level inspires and prepares students to become community-minded business leaders in a global society through relevant career preparation and leadership experiences.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">🏆</div>
+          <h3>Competitions</h3>
+          <p>Members compete at regional, state, and national levels in events like business communication, computer problem solving, digital citizenship, and more.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">🤝</div>
+          <h3>Community Service</h3>
+          <p>We believe in giving back. Our chapter participates in community service projects throughout the year, making a positive impact in our local community.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">📈</div>
+          <h3>Leadership</h3>
+          <p>Through workshops, conferences, and hands-on projects, members develop critical leadership skills that will serve them throughout their academic and professional careers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ANNOUNCEMENTS ========== -->
+  <section class="section section-alt" id="announcements">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Stay Updated</p>
+        <h2 class="section-title">Announcements</h2>
+      </div>
+      <div class="announcements-list">
+
+        <article class="announcement-card pinned">
+          <div class="announcement-badge">📌 Pinned</div>
+          <div class="announcement-content">
+            <div class="announcement-meta">
+              <time datetime="2026-09-08">September 8, 2026</time>
+              <span class="announcement-category">Important</span>
+            </div>
+            <h3>Welcome Back! First FBLA Meeting of the Year</h3>
+            <p>Welcome to another exciting year of FBLA at Little Mill Middle School! Our first meeting will be held on <strong>Wednesday, September 16th</strong> in Room 204 after school. All interested students are welcome to attend. We'll be discussing this year's goals, upcoming competitions, and community service projects.</p>
+          </div>
+        </article>
+
+        <article class="announcement-card">
+          <div class="announcement-content">
+            <div class="announcement-meta">
+              <time datetime="2026-09-05">September 5, 2026</time>
+              <span class="announcement-category">Dues</span>
+            </div>
+            <h3>Membership Dues Reminder</h3>
+            <p>FBLA membership dues for the 2026-2027 school year are <strong>$15</strong>. Please submit your dues to Mrs. Johnson by September 30th. Dues cover your national and state membership, competition fees, and chapter activities.</p>
+          </div>
+        </article>
+
+        <article class="announcement-card">
+          <div class="announcement-content">
+            <div class="announcement-meta">
+              <time datetime="2026-09-01">September 1, 2026</time>
+              <span class="announcement-category">Competition</span>
+            </div>
+            <h3>Fall Regional Competition Registration Open</h3>
+            <p>Registration is now open for the Fall Regional FBLA Competition. Interested members should sign up by October 15th. See the Events section for more details on available competitive events.</p>
+          </div>
+        </article>
+
+        <article class="announcement-card">
+          <div class="announcement-content">
+            <div class="announcement-meta">
+              <time datetime="2026-08-28">August 28, 2026</time>
+              <span class="announcement-category">General</span>
+            </div>
+            <h3>New FBLA Website Launched!</h3>
+            <p>We're excited to announce the launch of our new FBLA chapter website! Here you'll find meeting minutes, announcements, event information, and everything you need to stay connected with our chapter.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MEETING MINUTES ========== -->
+  <section class="section" id="minutes">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Official Records</p>
+        <h2 class="section-title">Meeting Minutes</h2>
+        <p class="section-desc">Official records from our chapter meetings. Click on any meeting to view the full minutes.</p>
+      </div>
+      <div class="minutes-container">
+
+        <details class="minutes-card" open>
+          <summary class="minutes-header">
+            <div class="minutes-info">
+              <span class="minutes-date">September 16, 2026</span>
+              <h3 class="minutes-title">First Meeting of 2026-2027</h3>
+            </div>
+            <span class="minutes-toggle">▼</span>
+          </summary>
+          <div class="minutes-body">
+            <div class="minutes-detail">
+              <p><strong>Called to Order:</strong> 3:15 PM by President</p>
+              <p><strong>Attendance:</strong> 42 members present</p>
+              <p><strong>Advisor:</strong> Mrs. Johnson</p>
+            </div>
+            <h4>Agenda Items</h4>
+            <ol>
+              <li><strong>Welcome &amp; Introductions</strong> — Officers introduced themselves and welcomed new members to the chapter.</li>
+              <li><strong>Overview of FBLA</strong> — Advisor presented an overview of FBLA-ML, its mission, and the benefits of membership.</li>
+              <li><strong>Membership Dues</strong> — Dues are $15, due by September 30th. Payment can be made online or by check.</li>
+              <li><strong>Competition Preview</strong> — Vice President discussed available competitive events for the 2026-2027 season.</li>
+              <li><strong>Community Service</strong> — The chapter will organize a school supply drive in October.</li>
+              <li><strong>Next Meeting</strong> — October 7th, 2026 at 3:15 PM in Room 204.</li>
+            </ol>
+            <p><strong>Meeting Adjourned:</strong> 4:00 PM</p>
+            <p class="minutes-recorder"><em>Minutes recorded by: Secretary</em></p>
+          </div>
+        </details>
+
+        <details class="minutes-card">
+          <summary class="minutes-header">
+            <div class="minutes-info">
+              <span class="minutes-date">Coming Soon</span>
+              <h3 class="minutes-title">October Meeting — TBD</h3>
+            </div>
+            <span class="minutes-toggle">▼</span>
+          </summary>
+          <div class="minutes-body">
+            <p>Minutes will be posted after the meeting takes place. Check back soon!</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== OFFICERS ========== -->
+  <section class="section section-alt" id="officers">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Leadership</p>
+        <h2 class="section-title">Chapter Officers</h2>
+        <p class="section-desc">Meet the student leaders guiding our chapter this year.</p>
+      </div>
+      <div class="officers-grid">
+        <div class="officer-card">
+          <div class="officer-avatar">👤</div>
+          <h3 class="officer-name">Student Name</h3>
+          <p class="officer-role">President</p>
+          <p class="officer-desc">Leads chapter meetings and represents our chapter at conferences and events.</p>
+        </div>
+        <div class="officer-card">
+          <div class="officer-avatar">👤</div>
+          <h3 class="officer-name">Student Name</h3>
+          <p class="officer-role">Vice President</p>
+          <p class="officer-desc">Assists the president and coordinates competition preparation and training.</p>
+        </div>
+        <div class="officer-card">
+          <div class="officer-avatar">👤</div>
+          <h3 class="officer-name">Student Name</h3>
+          <p class="officer-role">Secretary</p>
+          <p class="officer-desc">Records meeting minutes and manages chapter correspondence.</p>
+        </div>
+        <div class="officer-card">
+          <div class="officer-avatar">👤</div>
+          <h3 class="officer-name">Student Name</h3>
+          <p class="officer-role">Treasurer</p>
+          <p class="officer-desc">Manages chapter finances, dues collection, and fundraising activities.</p>
+        </div>
+        <div class="officer-card">
+          <div class="officer-avatar">👤</div>
+          <h3 class="officer-name">Student Name</h3>
+          <p class="officer-role">Reporter</p>
+          <p class="officer-desc">Handles public relations, social media, and chapter communications.</p>
+        </div>
+        <div class="officer-card">
+          <div class="officer-avatar">👤</div>
+          <h3 class="officer-name">Student Name</h3>
+          <p class="officer-role">Parliamentarian</p>
+          <p class="officer-desc">Ensures meetings follow proper procedure and manages chapter bylaws.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EVENTS ========== -->
+  <section class="section" id="events">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Calendar</p>
+        <h2 class="section-title">Upcoming Events</h2>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="event-date">
+              <span class="event-month">SEP</span>
+              <span class="event-day">16</span>
+            </div>
+            <div class="event-details">
+              <h3>First Chapter Meeting</h3>
+              <p class="event-time">📍 Room 204 &nbsp;|&nbsp; 🕐 3:15 PM - 4:00 PM</p>
+              <p>Welcome meeting for all new and returning members. Learn about this year's plans!</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="event-date">
+              <span class="event-month">OCT</span>
+              <span class="event-day">7</span>
+            </div>
+            <div class="event-details">
+              <h3>October Chapter Meeting</h3>
+              <p class="event-time">📍 Room 204 &nbsp;|&nbsp; 🕐 3:15 PM - 4:00 PM</p>
+              <p>Competition event selection and community service project planning.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="event-date">
+              <span class="event-month">OCT</span>
+              <span class="event-day">20</span>
+            </div>
+            <div class="event-details">
+              <h3>School Supply Drive</h3>
+              <p class="event-time">📍 School Lobby &nbsp;|&nbsp; 🕐 All Day</p>
+              <p>Community service project — collecting supplies for local families in need.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="event-date">
+              <span class="event-month">NOV</span>
+              <span class="event-day">15</span>
+            </div>
+            <div class="event-details">
+              <h3>Fall Regional Competition</h3>
+              <p class="event-time">📍 TBD &nbsp;|&nbsp; 🕐 All Day</p>
+              <p>Regional FBLA competition. Members will compete in their selected events.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="event-date">
+              <span class="event-month">DEC</span>
+              <span class="event-day">10</span>
+            </div>
+            <div class="event-details">
+              <h3>Holiday Social &amp; Fundraiser</h3>
+              <p class="event-time">📍 Cafeteria &nbsp;|&nbsp; 🕐 3:15 PM - 5:00 PM</p>
+              <p>End-of-semester celebration with games, food, and a fundraiser for our chapter fund.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== JOIN ========== -->
+  <section class="section section-cta" id="join">
+    <div class="container">
+      <div class="join-content">
+        <h2 class="join-title">Ready to Become a Future Business Leader?</h2>
+        <p class="join-text">Joining FBLA is the first step toward developing the skills you need to succeed in business, leadership, and life. All Little Mill Middle School students are welcome!</p>
+        <div class="join-steps">
+          <div class="join-step">
+            <div class="step-number">1</div>
+            <h3>Attend a Meeting</h3>
+            <p>Come to our next chapter meeting to learn more about FBLA and meet current members.</p>
+          </div>
+          <div class="join-step">
+            <div class="step-number">2</div>
+            <h3>Fill Out the Form</h3>
+            <p>Complete a membership application and get a parent/guardian signature.</p>
+          </div>
+          <div class="join-step">
+            <div class="step-number">3</div>
+            <h3>Pay Dues</h3>
+            <p>Submit your $15 membership dues to our treasurer or advisor.</p>
+          </div>
+        </div>
+        <div class="join-contact">
+          <h3>Questions?</h3>
+          <p>Contact our advisor <strong>Mrs. Johnson</strong> in <strong>Room 204</strong> or email at <a href="mailto:advisor@littlemill.edu">advisor@littlemill.edu</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-icon">📊</span>
+          <span class="logo-text">LMMS <strong>FBLA</strong></span>
+          <p>Little Mill Middle School<br>Future Business Leaders of America</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#announcements">Announcements</a></li>
+            <li><a href="#minutes">Meeting Minutes</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="https://www.fbla.org" target="_blank" rel="noopener">FBLA National</a></li>
+            <li><a href="https://www.fbla.org/divisions/fbla-middle-level/" target="_blank" rel="noopener">FBLA Middle Level</a></li>
+            <li><a href="#join">How to Join</a></li>
+            <li><a href="#events">Events Calendar</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Little Mill Middle School FBLA Chapter. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

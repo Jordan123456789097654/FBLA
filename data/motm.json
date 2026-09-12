@@ -1,0 +1,47 @@
+{
+  "activePoll": {
+    "enabled": true,
+    "title": "Vote for September Member of the Month \ud83c\udf1f",
+    "nominees": [
+      {
+        "id": "nom1",
+        "name": "Emma Thompson",
+        "grade": "7th",
+        "reason": "Outstanding help organizing chapter dues and welcoming 6th graders.",
+        "votes": 14
+      },
+      {
+        "id": "nom2",
+        "name": "Noah Kim",
+        "grade": "6th",
+        "reason": "Created great graphics for our school supply drive flyers.",
+        "votes": 9
+      },
+      {
+        "id": "nom3",
+        "name": "Lucas Miller",
+        "grade": "8th",
+        "reason": "Mentored 3 new members in Business Communication prep.",
+        "votes": 12
+      }
+    ]
+  },
+  "winners": [
+    {
+      "id": "w1",
+      "name": "Emma Thompson",
+      "month": "September 2026",
+      "grade": "7th Grade",
+      "photoUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500",
+      "reason": "Recognized for exemplary leadership in organizing chapter dues and mentoring new 6th grade members!"
+    },
+    {
+      "id": "w2",
+      "name": "Jordan Chen",
+      "month": "August 2026",
+      "grade": "8th Grade",
+      "photoUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500",
+      "reason": "Recognized for leading the back-to-school FBLA recruitment drive and setting up chapter calendar."
+    }
+  ]
+}

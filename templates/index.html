@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Mill Middle School FBLA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">📊 LMMS <span class="gold-text">FBLA</span></a>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#announcements">Announcements</a>
+                <a href="#minutes">Minutes</a>
+                <a href="#roster">Roster</a>
+                <a href="#events">Events</a>
+                <a href="#elections">Elections 🗳️</a>
+                <a href="#motm">MOTM 🌟</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#resources">Resources</a>
+                <a href="#admin" class="admin-link">🔒</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Automated 24h Meeting Reminder Banner -->
+    <div id="meeting-reminder-banner" class="reminder-banner hidden" style="background: linear-gradient(90deg, #e8b84b, #f0cc7a); color: #071c36; padding: 10px 0; font-weight: 600; text-align: center; position: relative; z-index: 999; box-shadow: 0 2px 10px rgba(0,0,0,0.3);">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; gap: 15px;">
+            <span id="banner-text" style="font-size: 0.95rem;">⏰ <strong>Meeting Reminder:</strong> Next FBLA Meeting is in 18 hours!</span>
+            <button id="banner-close-btn" style="background: none; border: none; font-size: 1.3rem; color: #071c36; cursor: pointer; font-weight: bold;">&times;</button>
+        </div>
+    </div>
+
+    <main id="app">
+        <!-- Home Page -->
+        <div id="home" class="page">
+            <section class="hero">
+                <div class="container hero-content">
+                    <span class="badge">Future Business Leaders of America</span>
+                    <h1 class="hero-title">Little Mill Middle School <span class="gold-text">FBLA</span></h1>
+                    <p class="hero-subtitle">Empowering future business leaders to achieve their goals and make a difference.</p>
+                    <div class="hero-buttons">
+                        <a href="#about" class="btn btn-primary">Join Our Chapter</a>
+                        <a href="https://www.schoolpay.com" target="_blank" rel="noopener" class="btn btn-primary schoolpay-btn" style="background: var(--gold); color: var(--navy-dark); font-weight: 700;">Pay $15 Dues on SchoolPay 💳</a>
+                        <a href="#about" class="btn btn-outline">Learn More</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="50">0</span>+
+                            <span class="stat-label">Members</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="10">0</span>+
+                            <span class="stat-label">Events/Year</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="15">0</span>+
+                            <span class="stat-label">Awards Won</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="latest-announcements-section">
+                <div class="container">
+                    <h2 class="section-title">Latest Announcements</h2>
+                    <div id="home-announcements" class="cards-grid fade-in"></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- About Page -->
+        <div id="about" class="page">
+            <section class="about-section">
+                <div class="container">
+                    <h2 class="section-title">About FBLA</h2>
+                    <p class="about-intro fade-in">The Future Business Leaders of America Middle Level (FBLA-ML) at Little Mill Middle School helps students transition into the business world, developing leadership, communication, and teamwork skills.</p>
+                    
+                    <div class="cards-grid fade-in">
+                        <div class="card">
+                            <h3>Mission</h3>
+                            <p>To bring business and education together in a positive working relationship through innovative leadership and career development programs.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Competitions</h3>
+                            <p>Test your business knowledge and skills in various competitive events at the regional, state, and national levels.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Community Service</h3>
+                            <p>Give back to the community through organized service projects and volunteer opportunities.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Leadership</h3>
+                            <p>Develop essential leadership skills through officer positions, committee roles, and leadership conferences.</p>
+                        </div>
+                    </div>
+
+                    <div class="creed-section fade-in">
+                        <h3>FBLA Creed</h3>
+                        <blockquote class="styled-blockquote">
+                            <p>I believe education is the right of every person.</p>
+                            <p>I believe the future depends on mutual understanding and cooperation among business, industry, labor, religious, family, and educational institutions, as well as people around the world.</p>
+                            <p>I agree to do my best to develop my abilities and to use them for the improvement of my home, business, community, and the world.</p>
+                        </blockquote>
+                    </div>
+
+                    <div class="pledge-section fade-in">
+                        <h3>FBLA Pledge</h3>
+                        <blockquote class="styled-blockquote">
+                            <p>I solemnly promise to uphold the aims and responsibilities of FBLA-PBL and, as an active member, I shall strive to develop the qualities necessary in becoming a responsible business leader.</p>
+                        </blockquote>
+                    </div>
+
+                    <div class="competitive-events-section fade-in">
+                        <h3>Competitive Events</h3>
+                        <div class="events-grid">
+                            <div class="event-category">Business Communication</div>
+                            <div class="event-category">Computer Problem Solving</div>
+                            <div class="event-category">Digital Citizenship</div>
+                            <div class="event-category">Exploring Computer Science</div>
+                            <div class="event-category">Career Exploration</div>
+                            <div class="event-category">Community Service Project</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Announcements Page -->
+        <div id="announcements" class="page">
+            <section class="announcements-section">
+                <div class="container">
+                    <h2 class="section-title">Announcements</h2>
+                    <div id="announcements-list" class="cards-grid fade-in"></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Minutes Page -->
+        <div id="minutes" class="page">
+            <section class="minutes-section">
+                <div class="container">
+                    <h2 class="section-title">Meeting Minutes</h2>
+                    <p class="section-subtitle">Official records from our chapter meetings</p>
+                    <div id="minutes-list" class="fade-in"></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Roster Page -->
+        <div id="roster" class="page">
+            <section class="roster-section">
+                <div class="container">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
+                        <div>
+                            <h2 class="section-title" style="margin-bottom: 4px;">Member Roster</h2>
+                            <p class="section-subtitle" style="margin-bottom: 0;">Our chapter members and officers</p>
+                        </div>
+                        <a href="https://www.schoolpay.com" target="_blank" rel="noopener" class="btn btn-primary schoolpay-btn" style="background: var(--gold); color: var(--navy-dark); font-weight: 700;">Pay $15 Dues on SchoolPay 💳</a>
+                    </div>
+                    
+                    <h3 class="subsection-title">Chapter Officers</h3>
+                    <div id="officers-grid" class="cards-grid officers-grid fade-in"></div>
+                    
+                    <h3 class="subsection-title mt-4">Members</h3>
+                    <div class="table-container fade-in">
+                        <table class="members-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Grade</th>
+                                    <th>Role</th>
+                                    <th>$15 Dues Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="members-table"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Events Page -->
+        <div id="events" class="page">
+            <section class="events-section">
+                <div class="container">
+                    <h2 class="section-title">Upcoming Events</h2>
+                    <div id="events-list" class="timeline fade-in"></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Elections Page -->
+        <div id="elections" class="page">
+            <section class="elections-section">
+                <div class="container">
+                    <div class="elections-header" style="text-align: center; margin-bottom: 40px;">
+                        <span class="badge" style="background: rgba(232,184,75,0.2); color: var(--gold); border: 1px solid var(--gold); padding: 6px 16px; border-radius: 20px; font-weight: 600;">🗳️ Officer Election Hub</span>
+                        <h2 class="section-title" id="election-page-title" style="margin-top: 15px;">2026-2027 Chapter Officer Elections</h2>
+                        <p class="section-subtitle" id="election-status-subtitle">Meet the candidates running to lead Little Mill Middle School FBLA!</p>
+                    </div>
+
+                    <div id="election-disabled-msg" class="card hidden" style="text-align: center; padding: 40px; margin-bottom: 30px;">
+                        <h3 style="color: var(--gold); font-size: 1.4rem;">Elections Are Currently Closed</h3>
+                        <p style="color: var(--white-80); margin-top: 10px;">Officer candidate profiles will appear here during election season. Stay tuned for announcements!</p>
+                    </div>
+
+                    <div id="election-active-content">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 16px;">
+                            <h3 style="font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.5rem; margin: 0;">Approved Officer Candidates</h3>
+                            <button id="btn-open-candidate-modal" class="btn btn-primary" style="background: var(--gold); color: var(--navy-dark); font-weight: 700;">Apply to Run for Officer 📝</button>
+                        </div>
+
+                        <div id="candidates-grid" class="cards-grid fade-in"></div>
+                    </div>
+
+                    <!-- Candidate Application Form Card/Modal -->
+                    <div id="candidate-modal" class="card hidden" style="max-width: 700px; margin: 40px auto 0; padding: 32px; background: var(--navy-light); border: 1px solid var(--gold);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                            <h3 style="color: var(--gold); font-size: 1.4rem; margin: 0;">Officer Candidate Application</h3>
+                            <button id="btn-close-candidate-modal" style="background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer;">&times;</button>
+                        </div>
+                        <form id="form-candidate-apply">
+                            <div class="form-group">
+                                <label>Your Full Name</label>
+                                <input type="text" id="candidate-apply-name" required placeholder="e.g. Alex Smith">
+                            </div>
+                            <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                                <div class="form-group">
+                                    <label>Grade Level</label>
+                                    <select id="candidate-apply-grade" required>
+                                        <option value="6th">6th Grade</option>
+                                        <option value="7th">7th Grade</option>
+                                        <option value="8th">8th Grade</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Position Sought</label>
+                                    <select id="candidate-apply-role" required>
+                                        <option value="President">President</option>
+                                        <option value="Vice President">Vice President</option>
+                                        <option value="Secretary">Secretary</option>
+                                        <option value="Treasurer">Treasurer</option>
+                                        <option value="Reporter">Reporter</option>
+                                        <option value="Parliamentarian">Parliamentarian</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Campaign Statement (Why vote for you?)</label>
+                                <textarea id="candidate-apply-statement" required rows="3" placeholder="Share your goals and vision for LMMS FBLA..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Qualifications & Leadership Experience</label>
+                                <textarea id="candidate-apply-qualifications" required rows="3" placeholder="List relevant activities, past roles, or skills..."></textarea>
+                            </div>
+                            <div class="form-actions" style="display: flex; gap: 12px; margin-top: 20px;">
+                                <button type="submit" class="btn btn-primary" style="background: var(--gold); color: var(--navy-dark); font-weight: 700;">Submit Application</button>
+                                <button type="button" id="btn-cancel-candidate-apply" class="btn btn-outline">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Member of the Month (MOTM) Page -->
+        <div id="motm" class="page">
+            <section class="motm-section">
+                <div class="container">
+                    <div style="text-align: center; margin-bottom: 40px;">
+                        <span class="badge" style="background: rgba(232,184,75,0.2); color: var(--gold); border: 1px solid var(--gold); padding: 6px 16px; border-radius: 20px; font-weight: 600;">🌟 Member Recognition</span>
+                        <h2 class="section-title" style="margin-top: 15px;">Member of the Month</h2>
+                        <p class="section-subtitle">Celebrating outstanding dedication, leadership, and service in our chapter.</p>
+                    </div>
+
+                    <!-- Active Member Voting Poll -->
+                    <div id="motm-poll-card" class="card" style="padding: 32px; border: 1px solid var(--gold); margin-bottom: 48px; background: linear-gradient(135deg, var(--navy-light), var(--navy));">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
+                            <h3 id="motm-poll-title" style="color: var(--gold); font-size: 1.4rem; margin: 0;">Vote for Member of the Month</h3>
+                            <span class="badge" style="background: var(--gold); color: var(--navy-dark); font-weight: 700;">Cast Your Vote!</span>
+                        </div>
+                        <p style="color: var(--white-80); margin-bottom: 24px;">Click the button next to your choice below to record your vote for this month's award!</p>
+                        <div id="motm-poll-nominees" class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));"></div>
+                    </div>
+
+                    <!-- Hall of Fame / Past Winners Showcase -->
+                    <h3 style="font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.8rem; margin-bottom: 24px;">🏆 Member of the Month Hall of Fame</h3>
+                    <div id="motm-winners-grid" class="cards-grid fade-in"></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Gallery Page -->
+        <div id="gallery" class="page">
+            <section class="gallery-section">
+                <div class="container">
+                    <h2 class="section-title">Photo Gallery</h2>
+                    <div id="gallery-grid" class="gallery-grid fade-in"></div>
+                </div>
+            </section>
+            
+            <div id="lightbox" class="lightbox hidden">
+                <div class="lightbox-content">
+                    <button class="lightbox-close">&times;</button>
+                    <img id="lightbox-img" src="" alt="">
+                    <p id="lightbox-caption" class="lightbox-caption"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resources Page -->
+        <div id="resources" class="page">
+            <section class="resources-section">
+                <div class="container">
+                    <h2 class="section-title">Resources & Study Materials</h2>
+                    <div id="resources-list" class="cards-grid fade-in"></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Admin Page -->
+        <div id="admin" class="page">
+            <section class="admin-section">
+                <div class="container">
+                    
+                    <div id="admin-login" class="admin-card">
+                        <h2 class="section-title">Admin Login</h2>
+                        <form id="login-form">
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </form>
+                    </div>
+
+                    <div id="admin-dashboard" class="hidden">
+                        <div class="admin-header">
+                            <h2>Officer Admin Dashboard</h2>
+                            <button id="logout-btn" class="btn btn-outline">Logout</button>
+                        </div>
+                        
+                        <div class="admin-tabs">
+                            <button class="tab-btn active" data-tab="admin-announcements">Announcements</button>
+                            <button class="tab-btn" data-tab="admin-minutes">Minutes</button>
+                            <button class="tab-btn" data-tab="admin-roster">Roster & Dues</button>
+                            <button class="tab-btn" data-tab="admin-events">Events</button>
+                            <button class="tab-btn" data-tab="admin-elections">Elections & Settings</button>
+                            <button class="tab-btn" data-tab="admin-motm">MOTM & Admin Invites ✉️</button>
+                            <button class="tab-btn" data-tab="admin-gallery">Gallery</button>
+                            <button class="tab-btn" data-tab="admin-resources">Resources</button>
+                        </div>
+
+                        <div class="tab-content-container">
+                            <!-- Admin Announcements -->
+                            <div id="admin-announcements" class="admin-tab-content active">
+                                <div class="admin-tab-header">
+                                    <h3>Manage Announcements</h3>
+                                    <button class="btn btn-primary btn-add" data-type="announcement">Add New</button>
+                                </div>
+                                <form id="form-announcement" class="admin-form hidden">
+                                    <input type="hidden" id="announcement-id">
+                                    <div class="form-group">
+                                        <label>Title</label>
+                                        <input type="text" id="announcement-title" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Content</label>
+                                        <textarea id="announcement-content" required></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Category</label>
+                                        <select id="announcement-category" required>
+                                            <option value="Important">Important</option>
+                                            <option value="General">General</option>
+                                            <option value="Competition">Competition</option>
+                                            <option value="Dues">Dues</option>
+                                            <option value="Service">Service</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Date</label>
+                                        <input type="date" id="announcement-date" required>
+                                    </div>
+                                    <div class="form-group checkbox-group">
+                                        <label><input type="checkbox" id="announcement-pinned"> Pinned</label>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                        <button type="button" class="btn btn-outline btn-cancel">Cancel</button>
+                                    </div>
+                                </form>
+                                <div id="admin-announcements-list" class="admin-list"></div>
+                            </div>
+
+                            <!-- Admin Minutes -->
+                            <div id="admin-minutes" class="admin-tab-content hidden">
+                                <div class="admin-tab-header">
+                                    <h3>Manage Minutes</h3>
+                                    <button class="btn btn-primary btn-add" data-type="minute">Add New</button>
+                                </div>
+                                <form id="form-minute" class="admin-form hidden">
+                                    <input type="hidden" id="minute-id">
+                                    <div class="form-group">
+                                        <label>Title</label>
+                                        <input type="text" id="minute-title" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Date</label>
+                                        <input type="date" id="minute-date" required>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label>Called to Order Time</label>
+                                            <input type="time" id="minute-called" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Adjourned Time</label>
+                                            <input type="time" id="minute-adjourned" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Attendance Count</label>
+                                        <input type="number" id="minute-attendance" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Advisor</label>
+                                        <input type="text" id="minute-advisor" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Recorder (Secretary)</label>
+                                        <input type="text" id="minute-recorder" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Agenda Items</label>
+                                        <div id="agenda-items-container"></div>
+                                        <button type="button" id="btn-add-agenda" class="btn btn-outline btn-sm mt-2">Add Agenda Item</button>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                        <button type="button" class="btn btn-outline btn-cancel">Cancel</button>
+                                    </div>
+                                </form>
+                                <div id="admin-minutes-list" class="admin-list"></div>
+                            </div>
+
+                            <!-- Admin Roster & Dues -->
+                            <div id="admin-roster" class="admin-tab-content hidden">
+                                <div class="admin-tab-header">
+                                    <h3>Manage Roster & Dues Status</h3>
+                                    <button class="btn btn-primary btn-add" data-type="roster">Add New Member</button>
+                                </div>
+                                <form id="form-roster" class="admin-form hidden">
+                                    <input type="hidden" id="roster-id">
+                                    <div class="form-group">
+                                        <label>Name</label>
+                                        <input type="text" id="roster-name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Grade</label>
+                                        <select id="roster-grade" required>
+                                            <option value="6th">6th</option>
+                                            <option value="7th">7th</option>
+                                            <option value="8th">8th</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Role</label>
+                                        <select id="roster-role" required>
+                                            <option value="member">Member</option>
+                                            <option value="officer">Officer</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group" id="officer-title-group" style="display:none;">
+                                        <label>Officer Title</label>
+                                        <input type="text" id="roster-title">
+                                    </div>
+                                    <div class="form-group checkbox-group">
+                                        <label><input type="checkbox" id="roster-dues-paid"> $15 Dues Paid</label>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                        <button type="button" class="btn btn-outline btn-cancel">Cancel</button>
+                                    </div>
+                                </form>
+                                <div id="admin-roster-list" class="admin-list"></div>
+                            </div>
+
+                            <!-- Admin Events -->
+                            <div id="admin-events" class="admin-tab-content hidden">
+                                <div class="admin-tab-header">
+                                    <h3>Manage Events</h3>
+                                    <button class="btn btn-primary btn-add" data-type="event">Add New</button>
+                                </div>
+                                <form id="form-event" class="admin-form hidden">
+                                    <input type="hidden" id="event-id">
+                                    <div class="form-group">
+                                        <label>Title</label>
+                                        <input type="text" id="event-title" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Category</label>
+                                        <select id="event-category" required>
+                                            <option value="Meeting">Meeting</option>
+                                            <option value="Competition">Competition</option>
+                                            <option value="Service">Service</option>
+                                            <option value="Social">Social</option>
+                                            <option value="Fundraiser">Fundraiser</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label>Date</label>
+                                            <input type="date" id="event-date" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Time</label>
+                                            <input type="text" id="event-time" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Location</label>
+                                        <input type="text" id="event-location" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <textarea id="event-description" required></textarea>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                        <button type="button" class="btn btn-outline btn-cancel">Cancel</button>
+                                    </div>
+                                </form>
+                                <div id="admin-events-list" class="admin-list"></div>
+                            </div>
+
+                            <!-- Admin Elections & Settings -->
+                            <div id="admin-elections" class="admin-tab-content hidden">
+                                <div class="admin-tab-header">
+                                    <h3>Officer Elections & Site Settings</h3>
+                                </div>
+
+                                <div class="admin-card" style="padding: 20px; background: var(--navy-light); border-radius: 10px; margin-bottom: 24px;">
+                                    <h4 style="color: var(--gold); margin-bottom: 12px;">Global Settings</h4>
+                                    <form id="form-election-settings">
+                                        <div class="form-group checkbox-group" style="margin-bottom: 16px;">
+                                            <label style="font-weight: 600; font-size: 1.05rem; cursor: pointer;">
+                                                <input type="checkbox" id="setting-election-enabled"> Enable Public Elections Page & Candidate Profiles
+                                            </label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Election Title</label>
+                                            <input type="text" id="setting-election-title" placeholder="2026-2027 Officer Elections">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>SchoolPay Portal URL</label>
+                                            <input type="url" id="setting-schoolpay-url" placeholder="https://www.schoolpay.com">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary" style="background: var(--gold); color: var(--navy-dark); font-weight: 700;">Save Settings</button>
+                                    </form>
+                                </div>
+
+                                <h4>Manage Candidate Applications</h4>
+                                <div id="admin-candidates-list" class="admin-list" style="margin-top: 12px;"></div>
+                            </div>
+
+                            <!-- Admin MOTM & Resend Invitations -->
+                            <div id="admin-motm" class="admin-tab-content hidden">
+                                <div class="admin-tab-header">
+                                    <h3>Member of the Month Polls & Resend Email Invites ✉️</h3>
+                                </div>
+
+                                <!-- Resend Admin Invite Card -->
+                                <div class="admin-card" style="padding: 24px; background: var(--navy-light); border-radius: 10px; margin-bottom: 30px; border: 1px solid var(--gold);">
+                                    <h4 style="color: var(--gold); margin-bottom: 8px;">Invite Officer / Advisor as Admin (via Resend) 📧</h4>
+                                    <p style="color: var(--white-80); font-size: 0.9rem; margin-bottom: 16px;">Send an automated email invitation with admin login details and credentials directly to an officer or advisor's email inbox using your Resend API key.</p>
+                                    <form id="form-resend-invite" style="display: flex; gap: 12px; flex-wrap: wrap;">
+                                        <input type="email" id="resend-invite-email" required placeholder="officer@forsth.k12.ga.us" style="flex: 1; min-width: 250px; padding: 10px 14px; border-radius: 6px; background: var(--navy-lighter); border: 1px solid var(--white-10); color: white;">
+                                        <button type="submit" class="btn btn-primary" style="background: var(--gold); color: var(--navy-dark); font-weight: 700;">Send Admin Invite Email ✉️</button>
+                                    </form>
+                                </div>
+
+                                <!-- MOTM Winner Publisher -->
+                                <div class="admin-card" style="padding: 24px; background: var(--navy-light); border-radius: 10px; margin-bottom: 30px;">
+                                    <h4 style="color: var(--gold); margin-bottom: 12px;">Publish Member of the Month Winner to Hall of Fame</h4>
+                                    <form id="form-motm-winner">
+                                        <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                                            <div class="form-group">
+                                                <label>Member Name</label>
+                                                <input type="text" id="motm-winner-name" required placeholder="e.g. Emma Thompson">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Month & Year</label>
+                                                <input type="text" id="motm-winner-month" required placeholder="e.g. October 2026">
+                                            </div>
+                                        </div>
+                                        <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                                            <div class="form-group">
+                                                <label>Grade Level</label>
+                                                <input type="text" id="motm-winner-grade" required placeholder="e.g. 7th Grade">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Photo URL (Optional)</label>
+                                                <input type="url" id="motm-winner-photo" placeholder="https://..." value="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Reason / Accomplishments</label>
+                                            <textarea id="motm-winner-reason" required rows="2" placeholder="Describe why this member won Member of the Month..."></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary" style="background: var(--gold); color: var(--navy-dark); font-weight: 700;">Publish Winner 🏆</button>
+                                    </form>
+                                </div>
+
+                                <h4 style="color: var(--gold); margin-bottom: 12px;">Current MOTM Hall of Fame Archive</h4>
+                                <div id="admin-motm-winners-list" class="admin-list"></div>
+                            </div>
+
+                            <!-- Admin Gallery -->
+                            <div id="admin-gallery" class="admin-tab-content hidden">
+                                <div class="admin-tab-header">
+                                    <h3>Manage Gallery</h3>
+                                    <button class="btn btn-primary btn-add" data-type="gallery">Add New</button>
+                                </div>
+                                <form id="form-gallery" class="admin-form hidden">
+                                    <input type="hidden" id="gallery-id">
+                                    <div class="form-group">
+                                        <label>Title</label>
+                                        <input type="text" id="gallery-title" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Image URL</label>
+                                        <input type="url" id="gallery-url" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Caption</label>
+                                        <textarea id="gallery-caption" required></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Event Name</label>
+                                        <input type="text" id="gallery-event">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Date</label>
+                                        <input type="date" id="gallery-date" required>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                        <button type="button" class="btn btn-outline btn-cancel">Cancel</button>
+                                    </div>
+                                </form>
+                                <div id="admin-gallery-list" class="admin-list"></div>
+                            </div>
+
+                            <!-- Admin Resources -->
+                            <div id="admin-resources" class="admin-tab-content hidden">
+                                <div class="admin-tab-header">
+                                    <h3>Manage Resources</h3>
+                                    <button class="btn btn-primary btn-add" data-type="resource">Add New</button>
+                                </div>
+                                <form id="form-resource" class="admin-form hidden">
+                                    <input type="hidden" id="resource-id">
+                                    <div class="form-group">
+                                        <label>Title</label>
+                                        <input type="text" id="resource-title" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>URL</label>
+                                        <input type="url" id="resource-url" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Category</label>
+                                        <select id="resource-category" required>
+                                            <option value="Competition Prep">Competition Prep</option>
+                                            <option value="Study Guide">Study Guide</option>
+                                            <option value="Handbook">Handbook</option>
+                                            <option value="General">General</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <textarea id="resource-description" required></textarea>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                        <button type="button" class="btn btn-outline btn-cancel">Cancel</button>
+                                    </div>
+                                </form>
+                                <div id="admin-resources-list" class="admin-list"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3>📊 LMMS <span class="gold-text">FBLA</span></h3>
+                <p>Developing the future business leaders of tomorrow.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="#about">About</a>
+                <a href="#events">Events</a>
+                <a href="#roster">Roster & Dues</a>
+                <a href="#elections">Elections</a>
+                <a href="#motm">Member of the Month</a>
+                <a href="#resources">Resources</a>
+            </div>
+            <div class="footer-social">
+                <h4>FBLA National</h4>
+                <a href="https://www.fbla.org/" target="_blank">Official Website</a>
+                <a href="https://www.fbla.org/about/" target="_blank">About FBLA</a>
+                <a href="https://www.fbla.org/programs/" target="_blank">Programs</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Little Mill Middle School FBLA. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

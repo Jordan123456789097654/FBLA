@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cand1",
+    "name": "Samantha Vance",
+    "grade": "8th",
+    "targetRole": "President",
+    "statement": "I want to help our chapter win top awards at State and organize fun community service events!",
+    "qualifications": "Served as Chapter Vice President last year and won 1st place in Business Communication.",
+    "status": "approved",
+    "createdAt": "2026-09-02T10:00:00"
+  },
+  {
+    "id": "cand2",
+    "name": "Marcus Davis",
+    "grade": "7th",
+    "targetRole": "Vice President",
+    "statement": "I will assist all members with competition prep and lead workshops on digital citizenship.",
+    "qualifications": "FBLA member for 2 years, active in school robotics club.",
+    "status": "approved",
+    "createdAt": "2026-09-03T11:00:00"
+  },
+  {
+    "id": "cand3",
+    "name": "Olivia Taylor",
+    "grade": "7th",
+    "targetRole": "Secretary",
+    "statement": "I am organized, reliable, and will keep our meeting minutes and records pristine.",
+    "qualifications": "Honor roll student, organized homeroom drives.",
+    "status": "approved",
+    "createdAt": "2026-09-04T09:00:00"
+  }
+]
