@@ -117,7 +117,7 @@ const showToast = (message, type = 'success') => {
   }, 3500);
 };
 
-// Global settings sync (updates SchoolPay buttons & hides disabled pages)
+// Global settings sync (updates SchoolPay buttons, hero stats & hides disabled pages)
 const updateGlobalSettingsUI = async () => {
   try {
     const settings = await api.get('/api/election-settings');
@@ -126,6 +126,18 @@ const updateGlobalSettingsUI = async () => {
         document.querySelectorAll('.schoolpay-btn').forEach(btn => {
           btn.setAttribute('href', settings.schoolPayUrl);
         });
+      }
+      if (settings.statMembers) {
+        const el = document.querySelector('.hero-stats .stat-item:nth-child(1) .stat-number');
+        if (el) el.setAttribute('data-target', parseInt(settings.statMembers) || 50);
+      }
+      if (settings.statEvents) {
+        const el = document.querySelector('.hero-stats .stat-item:nth-child(2) .stat-number');
+        if (el) el.setAttribute('data-target', parseInt(settings.statEvents) || 10);
+      }
+      if (settings.statAwards) {
+        const el = document.querySelector('.hero-stats .stat-item:nth-child(3) .stat-number');
+        if (el) el.setAttribute('data-target', parseInt(settings.statAwards) || 15);
       }
       const disabledPages = settings.disabledPages || [];
       document.querySelectorAll('.nav-links a').forEach(link => {
@@ -789,6 +801,10 @@ const loadAdminElectionsTab = async () => {
     document.getElementById('setting-election-title').value = settings.title || '';
     document.getElementById('setting-schoolpay-url').value = settings.schoolPayUrl || '';
 
+    if (document.getElementById('setting-stat-members')) document.getElementById('setting-stat-members').value = settings.statMembers || '50+';
+    if (document.getElementById('setting-stat-events')) document.getElementById('setting-stat-events').value = settings.statEvents || '10+';
+    if (document.getElementById('setting-stat-awards')) document.getElementById('setting-stat-awards').value = settings.statAwards || '15+';
+
     const disabledPages = settings.disabledPages || [];
     document.querySelectorAll('.page-toggle').forEach(chk => {
       const pageId = chk.getAttribute('data-page');
@@ -940,7 +956,11 @@ const setupAdminForms = () => {
       const enabled = document.getElementById('setting-election-enabled').checked;
       const title = document.getElementById('setting-election-title').value;
       const schoolPayUrl = document.getElementById('setting-schoolpay-url').value;
-      
+
+      const statMembers = document.getElementById('setting-stat-members') ? document.getElementById('setting-stat-members').value : '50+';
+      const statEvents = document.getElementById('setting-stat-events') ? document.getElementById('setting-stat-events').value : '10+';
+      const statAwards = document.getElementById('setting-stat-awards') ? document.getElementById('setting-stat-awards').value : '15+';
+
       const disabledPages = [];
       document.querySelectorAll('.page-toggle').forEach(chk => {
         if (!chk.checked) {
@@ -949,9 +969,10 @@ const setupAdminForms = () => {
       });
 
       try {
-        await api.post('/api/election-settings', { enabled, title, schoolPayUrl, disabledPages });
+        await api.post('/api/election-settings', { enabled, title, schoolPayUrl, statMembers, statEvents, statAwards, disabledPages });
         showToast('Settings & page visibility saved successfully!');
         updateGlobalSettingsUI();
+        animateStats();
       } catch (err) {
         showToast('Failed to save settings', 'error');
       }
@@ -1340,6 +1361,52 @@ document.addEventListener('DOMContentLoaded', () => {
   setupAdminTabs();
   setupAdminForms();
 
+  // Cookie Consent logic
+  const cookieBanner = document.getElementById('cookie-consent-banner');
+  const acceptCookiesBtn = document.getElementById('btn-accept-cookies');
+  if (cookieBanner) {
+    if (localStorage.getItem('cookie_consent_accepted') === 'true') {
+      cookieBanner.style.display = 'none';
+    } else {
+      cookieBanner.style.display = 'flex';
+    }
+  }
+  if (acceptCookiesBtn) {
+    acceptCookiesBtn.addEventListener('click', () => {
+      localStorage.setItem('cookie_consent_accepted', 'true');
+      if (cookieBanner) cookieBanner.style.display = 'none';
+      showToast('Cookie preferences saved!');
+    });
+  }
+
   window.addEventListener('hashchange', router);
   router();
 });
+
+// Modal helpers for Terms of Service & Privacy Policy
+window.openTosModal = () => {
+  const modal = document.getElementById('tos-modal');
+  if (modal) modal.classList.remove('hidden');
+};
+
+window.closeTosModal = () => {
+  const modal = document.getElementById('tos-modal');
+  if (modal) modal.classList.add('hidden');
+};
+
+window.openPrivacyModal = () => {
+  const modal = document.getElementById('privacy-modal');
+  if (modal) modal.classList.remove('hidden');
+};
+
+window.closePrivacyModal = () => {
+  const modal = document.getElementById('privacy-modal');
+  if (modal) modal.classList.add('hidden');
+};
+
+window.resetCookieConsent = () => {
+  localStorage.removeItem('cookie_consent_accepted');
+  const cookieBanner = document.getElementById('cookie-consent-banner');
+  if (cookieBanner) cookieBanner.style.display = 'flex';
+  showToast('Cookie banner reset. You can accept cookie settings again.');
+};

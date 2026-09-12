@@ -639,7 +639,10 @@ def get_election_settings():
         'enabled': True,
         'title': '2026-2027 Officer Elections',
         'schoolPayUrl': 'https://www.schoolpay.com',
-        'disabledPages': []
+        'disabledPages': [],
+        'statMembers': '50',
+        'statEvents': '10',
+        'statAwards': '15'
     }
 
     for row in rows:

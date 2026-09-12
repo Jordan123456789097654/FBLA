@@ -572,6 +572,24 @@
                                             <input type="url" id="setting-schoolpay-url" placeholder="https://www.schoolpay.com">
                                         </div>
 
+                                        <div class="form-group" style="margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--white-10);">
+                                            <label style="font-weight: 700; color: var(--gold); margin-bottom: 10px; display: block;">Hero Section Statistics (Real Data Sync)</label>
+                                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px;">
+                                                <div>
+                                                    <label style="font-size: 0.85rem;">Members Stat</label>
+                                                    <input type="text" id="setting-stat-members" placeholder="50+">
+                                                </div>
+                                                <div>
+                                                    <label style="font-size: 0.85rem;">Events/Year Stat</label>
+                                                    <input type="text" id="setting-stat-events" placeholder="10+">
+                                                </div>
+                                                <div>
+                                                    <label style="font-size: 0.85rem;">Awards Won Stat</label>
+                                                    <input type="text" id="setting-stat-awards" placeholder="15+">
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         <div class="form-group" style="margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--white-10);">
                                             <label style="font-weight: 700; color: var(--gold); margin-bottom: 10px; display: block;">Website Page Visibility (Uncheck to DISABLE page on website)</label>
                                             <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; background: var(--navy-lighter); padding: 16px; border-radius: 8px;">
@@ -748,10 +766,78 @@
                 <a href="https://www.fbla.org/programs/" target="_blank">Programs</a>
             </div>
         </div>
-        <div class="footer-bottom">
+        <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding-top: 16px;">
             <p>&copy; 2026 Little Mill Middle School FBLA. All rights reserved.</p>
+            <div style="display: flex; gap: 16px; font-size: 0.85rem;">
+                <a href="javascript:void(0)" onclick="openTosModal()" style="color: var(--white-60); text-decoration: underline;">Terms of Service</a>
+                <a href="javascript:void(0)" onclick="openPrivacyModal()" style="color: var(--white-60); text-decoration: underline;">Privacy Policy</a>
+                <a href="javascript:void(0)" onclick="resetCookieConsent()" style="color: var(--white-60); text-decoration: underline;">Cookie Preferences</a>
+            </div>
         </div>
     </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner" class="cookie-banner" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 720px; background: rgba(7, 28, 54, 0.96); backdrop-filter: blur(10px); border: 1px solid var(--gold); padding: 18px 24px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); z-index: 9999; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 250px;">
+            <h5 style="color: var(--gold); margin-bottom: 4px; font-size: 1rem; font-family: 'Playfair Display', serif;">🍪 Cookie Consent & Privacy Notice</h5>
+            <p style="color: var(--white-80); font-size: 0.85rem; margin: 0; line-height: 1.4;">
+                We use cookies and local storage to enhance your browsing experience, remember session authentication, and save chapter preferences. Read our <a href="javascript:void(0)" onclick="openPrivacyModal()" style="color: var(--gold); text-decoration: underline;">Privacy Policy</a> &amp; <a href="javascript:void(0)" onclick="openTosModal()" style="color: var(--gold); text-decoration: underline;">Terms of Service</a>.
+            </p>
+        </div>
+        <div style="display: flex; gap: 10px;">
+            <button id="btn-accept-cookies" class="btn btn-primary" style="background: var(--gold); color: var(--navy-dark); font-weight: 700; padding: 8px 16px; font-size: 0.85rem; border-radius: 6px;">Accept All Cookies</button>
+        </div>
+    </div>
+
+    <!-- TOS Modal -->
+    <div id="tos-modal" class="modal-overlay hidden" style="position: fixed; inset: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); z-index: 10000; display: flex; align-items: center; justify-content: center; padding: 20px;">
+        <div class="modal-content" style="background: var(--navy); border: 1px solid var(--gold); border-radius: 12px; max-width: 700px; width: 100%; max-height: 85vh; overflow-y: auto; padding: 30px; position: relative; color: white;">
+            <button class="modal-close" onclick="closeTosModal()" style="position: absolute; top: 16px; right: 20px; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer;">&times;</button>
+            <h2 style="color: var(--gold); margin-bottom: 16px; font-family: 'Playfair Display', serif;">Terms of Service</h2>
+            <p style="color: var(--white-60); font-size: 0.85rem; margin-bottom: 20px;">Effective Date: September 2026 | Little Mill Middle School FBLA</p>
+            
+            <h4 style="color: var(--gold); margin-top: 16px;">1. Acceptance of Terms</h4>
+            <p style="color: var(--white-80); line-height: 1.5; font-size: 0.9rem;">By accessing or using the Little Mill Middle School (LMMS) FBLA Chapter website, you agree to comply with and be bound by these Terms of Service and all applicable school district policies.</p>
+            
+            <h4 style="color: var(--gold); margin-top: 16px;">2. Chapter Membership & Student Conduct</h4>
+            <p style="color: var(--white-80); line-height: 1.5; font-size: 0.9rem;">All interactive features (such as Officer Elections and Member of the Month voting) are restricted to registered LMMS FBLA members. Academic honesty, respectful communication, and compliance with the Forsyth County Schools Code of Conduct are strictly enforced.</p>
+            
+            <h4 style="color: var(--gold); margin-top: 16px;">3. Dues & Online Payments</h4>
+            <p style="color: var(--white-80); line-height: 1.5; font-size: 0.9rem;">Membership dues are collected securely through official school payment systems (SchoolPay). The LMMS FBLA website does not store credit card numbers or financial credentials directly.</p>
+
+            <h4 style="color: var(--gold); margin-top: 16px;">4. Modifications</h4>
+            <p style="color: var(--white-80); line-height: 1.5; font-size: 0.9rem;">Chapter advisers reserve the right to update these terms or site features at any time to reflect chapter guidelines.</p>
+
+            <div style="margin-top: 24px; text-align: right;">
+                <button class="btn btn-primary" onclick="closeTosModal()" style="background: var(--gold); color: var(--navy-dark); font-weight: 700;">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacy-modal" class="modal-overlay hidden" style="position: fixed; inset: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); z-index: 10000; display: flex; align-items: center; justify-content: center; padding: 20px;">
+        <div class="modal-content" style="background: var(--navy); border: 1px solid var(--gold); border-radius: 12px; max-width: 700px; width: 100%; max-height: 85vh; overflow-y: auto; padding: 30px; position: relative; color: white;">
+            <button class="modal-close" onclick="closePrivacyModal()" style="position: absolute; top: 16px; right: 20px; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer;">&times;</button>
+            <h2 style="color: var(--gold); margin-bottom: 16px; font-family: 'Playfair Display', serif;">Privacy Policy</h2>
+            <p style="color: var(--white-60); font-size: 0.85rem; margin-bottom: 20px;">Effective Date: September 2026 | Little Mill Middle School FBLA</p>
+            
+            <h4 style="color: var(--gold); margin-top: 16px;">1. Information We Collect</h4>
+            <p style="color: var(--white-80); line-height: 1.5; font-size: 0.9rem;">LMMS FBLA respects student and member privacy. We collect minimal personal data required for chapter administration: student name, grade level, officer title, school email address, and optional candidacy statements.</p>
+            
+            <h4 style="color: var(--gold); margin-top: 16px;">2. How We Use Data</h4>
+            <p style="color: var(--white-80); line-height: 1.5; font-size: 0.9rem;">Member data is exclusively used for chapter communications, tracking dues payment status, verifying election candidate eligibility, and managing chapter activities.</p>
+
+            <h4 style="color: var(--gold); margin-top: 16px;">3. Cookies & Local Storage</h4>
+            <p style="color: var(--white-80); line-height: 1.5; font-size: 0.9rem;">We use browser session tokens and local storage to keep logged-in chapter officers authenticated securely and save your cookie banner preference.</p>
+
+            <h4 style="color: var(--gold); margin-top: 16px;">4. Third-Party Services</h4>
+            <p style="color: var(--white-80); line-height: 1.5; font-size: 0.9rem;">We utilize Resend for automated transactional email invitations to officers/advisors. We do not sell, rent, or share member information with commercial third parties.</p>
+
+            <div style="margin-top: 24px; text-align: right;">
+                <button class="btn btn-primary" onclick="closePrivacyModal()" style="background: var(--gold); color: var(--navy-dark); font-weight: 700;">Close</button>
+            </div>
+        </div>
+    </div>
 
     <div id="toast-container" class="toast-container"></div>
 
