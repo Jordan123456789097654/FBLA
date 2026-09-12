@@ -382,9 +382,6 @@ const renderRoster = async () => {
     if (officersGrid) {
       officersGrid.innerHTML = officers.map(off => `
         <div class="card officer-card" style="text-align: center; padding: 24px; position: relative;">
-          <span style="position: absolute; top: 12px; right: 12px; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 12px; background: ${off.duesPaid ? 'rgba(46,204,113,0.2)' : 'rgba(231,76,60,0.2)'}; color: ${off.duesPaid ? '#2ecc71' : '#e74c3c'}; border: 1px solid ${off.duesPaid ? '#2ecc71' : '#e74c3c'};">
-            ${off.duesPaid ? '✓ Dues Paid' : 'Dues Pending'}
-          </span>
           <div class="officer-avatar" style="width: 72px; height: 72px; background: var(--navy-lighter); color: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; margin: 10px auto 16px; border: 2px solid var(--gold);">${getInitials(off.name)}</div>
           <h3 class="officer-name" style="font-size: 1.1rem; margin-bottom: 4px; font-family: 'Inter', sans-serif;">${escapeHtml(off.name)}</h3>
           <div class="officer-title" style="color: var(--gold); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">${escapeHtml(off.officerTitle || 'Officer')}</div>
@@ -400,11 +397,6 @@ const renderRoster = async () => {
           <td style="padding: 12px 16px; font-weight: 500;">${escapeHtml(m.name)}</td>
           <td style="padding: 12px 16px;">${escapeHtml(m.grade)}</td>
           <td style="padding: 12px 16px;"><span class="category-badge" style="background: var(--navy-lighter); color: var(--white-80);">Member</span></td>
-          <td style="padding: 12px 16px;">
-            <span style="display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: 600; background: ${m.duesPaid ? 'rgba(46,204,113,0.2)' : 'rgba(241,196,15,0.2)'}; color: ${m.duesPaid ? '#2ecc71' : '#f1c40f'}; border: 1px solid ${m.duesPaid ? '#2ecc71' : '#f1c40f'};">
-              ${m.duesPaid ? '✓ Dues Paid' : 'Dues Pending'}
-            </span>
-          </td>
         </tr>
       `).join('');
     }
